@@ -52,7 +52,7 @@ public class WordTypes {
     public static final WordType INT_WORD
             = new WordType("integer", BEGINNING_OF_AN_INT_WORD.getRegex() + "[0-9]*|0");
     public static final WordType DOUBLE_WORD
-            = new WordType("double", BEGINNING_OF_AN_INT_WORD.getRegex() + "[0-9]*\\.[0-9]+");
+            = new WordType("double", "(0|[1-9][0-9]*)\\.[0-9]*[1-9]");
     public static final WordType CHAR_WORD
             = new WordType("character", "\\'.\\'");
     public static final WordType STRING_WORD

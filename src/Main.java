@@ -1,5 +1,4 @@
-import lexer.CodeSpliter;
-import lexer.Lexer;
+import lexer.LexerImpl;
 import lexer.Word;
 import loader.FileLoader;
 
@@ -31,7 +30,7 @@ public class Main {
         String code21 = FileLoader.getFileLoader().load("src/codes/code21.vuja");
 
         List<Word> words;
-        words = Lexer.getLexer().lex(code7);
+        words = LexerImpl.getLexer().lex(code21);
         for (Word w : words)
             System.out.println(w);
     }

@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Lexer {
+public class LexerImpl {
 
-    private static Lexer lexer;
+    private static LexerImpl lexerImpl;
 
-    public static Lexer getLexer() {
-        if (lexer == null) {
-            synchronized (Lexer.class) {
-                if (lexer == null)
-                    lexer = new Lexer();
+    public static LexerImpl getLexer() {
+        if (lexerImpl == null) {
+            synchronized (LexerImpl.class) {
+                if (lexerImpl == null)
+                    lexerImpl = new LexerImpl();
             }
         }
-        return lexer;
+        return lexerImpl;
     }
 
     public List<Word> lex(String code) {
@@ -24,7 +24,7 @@ public class Lexer {
         String[] codeSplitted = codeSpliter.getCodeSplitted().toArray(new String[0]);
 
         for (String word: codeSplitted) {
-            System.out.println(word);
+            //System.out.println(word);
             WordType wordType = null;
             for (Map.Entry<String, WordType> wt : WordTypes.REGEXES.entrySet()) {
                 if (word.matches(wt.getKey())) {
@@ -39,6 +39,6 @@ public class Lexer {
         }
         return words;
     }
-    private Lexer() {
+    private LexerImpl() {
     }
 }

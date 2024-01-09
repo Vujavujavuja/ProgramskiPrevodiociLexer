@@ -12,8 +12,7 @@ public class Word {
 
     @Override
     public String toString() {
-        return "Word: " + word + " Word type: " + wordType.getWordTypeName()
-                + " Regex: " + wordType.getRegex();
+        return "Word: " + word + " Word type: " + wordType.getWordTypeName();
     }
 
     public String getWord() {
